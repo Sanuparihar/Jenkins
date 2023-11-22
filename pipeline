@@ -1,0 +1,26 @@
+pipeline {
+    agent any
+    agent {"lable": "agen name"}  ( ignore this line if you do not have agent)
+    stages {
+        stage("code"){
+            steps{
+                echo 'clone ho gya'
+            }   
+        }
+        stage("build and Test"){
+            steps{
+                echo 'code build and test ho gya'    
+            }  
+        }
+        stage("Push to DockerHub"){
+            steps{
+                echo 'push h gya'
+            }    
+        }
+        stage("Deploy"){
+            steps{
+                echo 'code deploy ho gya'
+            }    
+        }
+    }
+}
